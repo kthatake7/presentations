@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>登録内容確認画面</h1>
+<form th:action="@{/presentation/finish}" method="post">
+以下の内容で登録します。<br>
+<br>
+名前：<span th:text="${userForm.name}"></span><input type="hidden" name="name" th:value="${userForm.name}"><br>
+<br>
+メールアドレス：<span th:text="${userForm.email}"></span><input type="hidden" name="email" th:value="${userForm.email}"><br>
+<br>
+<input type="hidden" name="token" th:value="${userForm.token}">
+<button>確認</button>
+</form>
+</body>
+</html>
